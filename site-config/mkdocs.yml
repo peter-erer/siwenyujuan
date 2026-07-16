@@ -1,0 +1,98 @@
+site_name: 四文鱼卷
+site_description: 面向北航医工学子的课程资料知识花园
+site_url: https://peter-erer.github.io/siwenyujuan/
+repo_url: https://github.com/peter-erer/siwenyujuan
+repo_name: peter-erer/siwenyujuan
+edit_uri: edit/main/
+
+# 资料原本就位于仓库根目录。配置文件放在子目录中，可以避免复制或移动资料。
+docs_dir: ..
+# MkDocs 不允许输出目录位于 docs_dir 内，因此把静态站点生成到仓库旁边。
+site_dir: ../../siwenyujuan-site
+use_directory_urls: true
+
+exclude_docs: |
+  .git/
+  .github/
+  .gitignore
+  LICENSE
+  site-config/mkdocs.yml
+  site-config/hooks.py
+  build-site.ps1
+  serve-site.ps1
+  requirements-docs.txt
+
+theme:
+  name: material
+  language: zh
+  font: false
+  icon:
+    logo: material/fish
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到浅色模式
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.annotate
+    - content.code.copy
+    - content.action.edit
+
+plugins:
+  - search:
+      separator: '[\s\-\u200b]+'
+
+hooks:
+  - hooks.py
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - toc:
+      permalink: true
+      title: 本页目录
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - site-config/stylesheets/extra.css
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/peter-erer/siwenyujuan
+      name: 四文鱼卷 GitHub 仓库
+
+copyright: 资料由四文鱼卷贡献者共同维护 · 请遵守仓库收录原则

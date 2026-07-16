@@ -1,0 +1,103 @@
+:root {
+  --salmon-coral: #ef6f61;
+  --salmon-deep: #c84d46;
+  --garden-teal: #197b78;
+  --garden-mint: #e5f5f1;
+  --garden-ink: #243334;
+  --md-primary-fg-color: var(--salmon-coral);
+  --md-primary-fg-color--light: #f49387;
+  --md-primary-fg-color--dark: var(--salmon-deep);
+  --md-accent-fg-color: var(--garden-teal);
+  --md-text-font: "Noto Sans CJK SC", "Microsoft YaHei", "PingFang SC", sans-serif;
+  --md-code-font: "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+}
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #fffdf9;
+  --md-default-fg-color: var(--garden-ink);
+  --md-typeset-a-color: var(--garden-teal);
+  --md-code-bg-color: #f2f6f4;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #d9655b;
+  --md-accent-fg-color: #77d4ca;
+  --md-typeset-a-color: #77d4ca;
+}
+
+.md-header {
+  background: linear-gradient(110deg, var(--salmon-deep), var(--salmon-coral) 58%, #f29b78);
+  box-shadow: 0 0.2rem 0.7rem rgba(89, 45, 39, 0.18);
+}
+
+.md-tabs {
+  background-color: var(--salmon-deep);
+}
+
+.md-typeset h1 {
+  color: var(--garden-ink);
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: #f7f2ea;
+}
+
+.md-typeset h2 {
+  border-bottom: 1px solid color-mix(in srgb, var(--salmon-coral) 28%, transparent);
+  padding-bottom: 0.35rem;
+  font-weight: 700;
+}
+
+.md-typeset a:not(.headerlink) {
+  text-underline-offset: 0.16em;
+}
+
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid color-mix(in srgb, var(--garden-teal) 22%, transparent);
+  border-radius: 0.85rem;
+  box-shadow: 0 0.25rem 1rem rgba(35, 69, 67, 0.06);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: var(--garden-teal);
+  box-shadow: 0 0.55rem 1.4rem rgba(35, 69, 67, 0.12);
+  transform: translateY(-2px);
+}
+
+.md-typeset table:not([class]) {
+  border-radius: 0.65rem;
+  box-shadow: 0 0.2rem 0.8rem rgba(35, 69, 67, 0.06);
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--garden-mint);
+  color: var(--garden-ink);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: #254b49;
+  color: #f2f7f6;
+}
+
+.md-typeset blockquote {
+  border-left-color: var(--salmon-coral);
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    max-width: 90rem;
+  }
+}
+
+@media print {
+  .md-header,
+  .md-tabs,
+  .md-sidebar,
+  .md-footer {
+    display: none !important;
+  }
+}
